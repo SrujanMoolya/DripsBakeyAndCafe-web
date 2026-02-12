@@ -9,6 +9,8 @@ import heroBakery from "@/assets/hero-bakery.jpg";
 import customCake from "@/assets/custom-cake.jpg";
 import pastries from "@/assets/pastries.jpg";
 import cafeInterior from "@/assets/cafe-interior.jpg";
+import outletPhoto from "@/assets/outlet-photo.jpg";
+import dripsLogo from "@/assets/drips-logo.jpg";
 import ProductCard from "@/components/ProductCard";
 import { useState } from "react";
 
@@ -117,8 +119,8 @@ const Home = () => {
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue rounded-full" />
               <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white transform hover:scale-105 transition-transform duration-500">
                 <img
-                  src={heroBakery}
-                  alt="Fresh Baked Goods"
+                  src={outletPhoto}
+                  alt="Drips Bakery & Cafe Outlet"
                   className="w-full h-[500px] object-cover"
                 />
               </div>
