@@ -20,6 +20,19 @@ const Menu = () => {
       { name: "Kit Kat Gems", description: "Premium 500gm", price: "₹550", image: customCake, color: "pink" as const },
       { name: "Rainbow Cake", description: "Colorful layers", price: "₹500", image: customCake, color: "yellow" as const },
     ],
+    barcakes: [
+      { name: "Red Velvet Bar Cake", description: "250gm", price: "₹75", image: customCake, color: "pink" as const },
+      { name: "Chocolate Bar Cake", description: "250gm", price: "₹75", image: customCake, color: "yellow" as const },
+      { name: "Vanilla Bar Cake", description: "250gm", price: "₹75", image: customCake, color: "peach" as const },
+    ],
+    cupcakes: [
+      { name: "Vanilla Cup Cake", description: "Fresh baked", price: "₹40", image: customCake, color: "yellow" as const },
+      { name: "Pineapple Cup Cake", description: "Fruity delight", price: "₹50", image: customCake, color: "peach" as const },
+      { name: "Strawberry Cup Cake", description: "Berry flavor", price: "₹50", image: customCake, color: "pink" as const },
+      { name: "Red Velvet Cup Cake", description: "Premium", price: "₹50", image: customCake, color: "pink" as const },
+      { name: "Blueberry Cup Cake", description: "Berry bliss", price: "₹50", image: customCake, color: "blue" as const },
+      { name: "Chocolate Cup Cake", description: "Rich cocoa", price: "₹50", image: customCake, color: "yellow" as const },
+    ],
     cheesecakes: [
       { name: "Red Velvet Cheesecake", description: "500gm", price: "₹500", image: customCake, color: "pink" as const },
       { name: "Blueberry Cheesecake", description: "500gm", price: "₹500", image: customCake, color: "blue" as const },
@@ -43,18 +56,42 @@ const Menu = () => {
       { name: "Strawberry Croissant", description: "Fresh berry", price: "₹40", image: pastries, color: "pink" as const },
       { name: "Chocolate Donut", description: "Classic glazed", price: "₹30", image: pastries, color: "yellow" as const },
       { name: "Caramel Donut", description: "Sweet caramel", price: "₹30", image: pastries, color: "peach" as const },
-      { name: "Red Velvet Muffin", description: "Mini size", price: "₹30", image: pastries, color: "pink" as const },
-      { name: "Chocolate Muffin", description: "Mini size", price: "₹25", image: pastries, color: "yellow" as const },
+      { name: "Brown Chocolate Donut", description: "Rich chocolate", price: "₹30", image: pastries, color: "yellow" as const },
+      { name: "Milk Chocolate Donut", description: "Creamy", price: "₹30", image: pastries, color: "peach" as const },
+      { name: "White Chocolate Donut", description: "Sweet white choco", price: "₹30", image: pastries, color: "pink" as const },
+      { name: "Chocolate Caramel Donut", description: "Double flavor", price: "₹35", image: pastries, color: "yellow" as const },
+      { name: "Chocolate Filling Donut", description: "Filled center", price: "₹40", image: pastries, color: "blue" as const },
+      { name: "Mini Fruit Muffin", description: "Fruity mini", price: "₹20", image: pastries, color: "peach" as const },
+      { name: "Mini Chocolate Muffin", description: "Mini size", price: "₹25", image: pastries, color: "yellow" as const },
+      { name: "Mini Red Velvet Muffin", description: "Mini size", price: "₹30", image: pastries, color: "pink" as const },
     ],
     snacks: [
       { name: "Veg Puff", description: "Crispy & savory", price: "₹15", image: pastries, color: "yellow" as const },
       { name: "Paneer Puff", description: "Paneer filling", price: "₹20", image: pastries, color: "peach" as const },
+      { name: "Jumbo Baked Vada Pav", description: "Baked fresh", price: "₹20", image: pastries, color: "yellow" as const },
       { name: "Veg Roll", description: "Fresh vegetables", price: "₹20", image: pastries, color: "blue" as const },
       { name: "Paneer Tikka Roll", description: "Spiced paneer", price: "₹20", image: pastries, color: "pink" as const },
       { name: "Paneer Bhurji Roll", description: "Scrambled paneer", price: "₹25", image: pastries, color: "peach" as const },
       { name: "Cheese Baked Roll", description: "Cheesy goodness", price: "₹25", image: pastries, color: "yellow" as const },
-      { name: "Brown Toast", description: "Crispy toast", price: "₹60", image: pastries, color: "peach" as const },
+      { name: "Veg Focaccia", description: "Prebaked Pizza", price: "₹30", image: pastries, color: "peach" as const },
+      { name: "Paneer Focaccia", description: "Prebaked Pizza", price: "₹35", image: pastries, color: "pink" as const },
+      { name: "Tandoori Paneer & Cheese Roll", description: "Spicy & cheesy", price: "₹30", image: pastries, color: "yellow" as const },
+      { name: "Veg Cheese Burger", description: "Veg Patties", price: "₹60", image: pastries, color: "blue" as const },
+      { name: "Coleslaw Sandwich", description: "Served Cold", price: "₹50", image: pastries, color: "peach" as const },
+    ],
+    breads: [
+      { name: "Brown Bread", description: "Fresh baked", price: "₹40", image: pastries, color: "peach" as const },
+      { name: "Milk Bread", description: "Soft & fluffy", price: "₹40", image: pastries, color: "yellow" as const },
+      { name: "Garlic Bread", description: "Aromatic garlic", price: "₹40", image: pastries, color: "peach" as const },
+      { name: "Brown Toast", description: "Crispy toast", price: "₹60", image: pastries, color: "yellow" as const },
+      { name: "Suji Toast", description: "Semolina coated", price: "₹50", image: pastries, color: "peach" as const },
       { name: "Kaju Toast", description: "With cashews", price: "₹55", image: pastries, color: "yellow" as const },
+      { name: "Soup Sticks", description: "Crunchy sticks", price: "₹50", image: pastries, color: "peach" as const },
+      { name: "Cheese Straws", description: "Cheesy delight", price: "₹50", image: pastries, color: "yellow" as const },
+      { name: "Fruit Toast", description: "With dry fruits", price: "₹55", image: pastries, color: "pink" as const },
+      { name: "Plain Khari", description: "Crispy puff", price: "₹50", image: pastries, color: "peach" as const },
+      { name: "Samosa Khari", description: "Spiced filling", price: "₹50", image: pastries, color: "yellow" as const },
+      { name: "Brown Khari", description: "Whole wheat", price: "₹60", image: pastries, color: "peach" as const },
     ],
     cookies: [
       { name: "Ajwain Star", description: "180gm pack", price: "₹70", image: pastries, color: "yellow" as const },
@@ -66,15 +103,29 @@ const Menu = () => {
       { name: "Red Velvet Cookies", description: "180gm pack", price: "₹70", image: pastries, color: "pink" as const },
       { name: "Kaju Macaroons", description: "180gm pack", price: "₹70", image: pastries, color: "yellow" as const },
     ],
+    chocolates: [
+      { name: "Rock Chocolate", description: "100gm", price: "₹70", image: customCake, color: "yellow" as const },
+      { name: "Milk Chocolate", description: "100gm", price: "₹70", image: customCake, color: "peach" as const },
+      { name: "Dry Fruit Chocolate", description: "100gm premium", price: "₹80", image: customCake, color: "blue" as const },
+    ],
     desserts: [
+      { name: "Chocolate Brownie", description: "Fudgy & rich", price: "₹50", image: customCake, color: "yellow" as const },
+      { name: "Choco Lava", description: "Molten center", price: "₹50", image: customCake, color: "blue" as const },
+      { name: "Brownie with Ice Cream", description: "Best combo", price: "₹70", image: customCake, color: "peach" as const },
+      { name: "Choco Lava with Ice Cream", description: "Indulgent treat", price: "₹70", image: customCake, color: "pink" as const },
       { name: "Strawberry Lollipop", description: "Sweet treat", price: "₹20", image: customCake, color: "pink" as const },
       { name: "Chocolate Lollipop", description: "Rich chocolate", price: "₹20", image: customCake, color: "yellow" as const },
       { name: "Choco Rum Ball", description: "Boozy delight", price: "₹25", image: customCake, color: "blue" as const },
-      { name: "Chocolate Brownie", description: "Fudgy & rich", price: "₹40", image: customCake, color: "yellow" as const },
       { name: "Nutella Brownie", description: "With Nutella", price: "₹50", image: customCake, color: "peach" as const },
       { name: "Tiramisu Mousse", description: "Coffee flavored", price: "₹50", image: customCake, color: "blue" as const },
       { name: "Blueberry Mousse", description: "Fresh berries", price: "₹40", image: customCake, color: "blue" as const },
       { name: "Strawberry Mousse", description: "Fresh strawberry", price: "₹40", image: customCake, color: "pink" as const },
+    ],
+    beverages: [
+      { name: "Hot Coffee", description: "Freshly brewed", price: "₹60", image: pastries, color: "yellow" as const },
+      { name: "Black Coffee", description: "Strong & bold", price: "₹60", image: pastries, color: "blue" as const },
+      { name: "Green Tea", description: "Healthy choice", price: "₹50", image: pastries, color: "peach" as const },
+      { name: "Black Tea", description: "Classic brew", price: "₹50", image: pastries, color: "yellow" as const },
     ],
   };
 
@@ -92,14 +143,19 @@ const Menu = () => {
         </div>
 
         <Tabs defaultValue="cakes" className="w-full">
-          <TabsList className="grid w-full max-w-4xl mx-auto grid-cols-4 lg:grid-cols-8 mb-12">
+          <TabsList className="grid w-full max-w-5xl mx-auto grid-cols-4 lg:grid-cols-12 mb-12">
             <TabsTrigger value="cakes">Cakes</TabsTrigger>
+            <TabsTrigger value="barcakes">Bar Cakes</TabsTrigger>
+            <TabsTrigger value="cupcakes">Cup Cakes</TabsTrigger>
             <TabsTrigger value="cheesecakes">Cheesecakes</TabsTrigger>
             <TabsTrigger value="icecream">Ice Cream</TabsTrigger>
             <TabsTrigger value="pastries">Pastries</TabsTrigger>
             <TabsTrigger value="snacks">Snacks</TabsTrigger>
+            <TabsTrigger value="breads">Breads & Toasts</TabsTrigger>
             <TabsTrigger value="cookies">Cookies</TabsTrigger>
+            <TabsTrigger value="chocolates">Chocolates</TabsTrigger>
             <TabsTrigger value="desserts">Desserts</TabsTrigger>
+            <TabsTrigger value="beverages">Beverages</TabsTrigger>
           </TabsList>
 
           {Object.entries(categories).map(([category, items]) => (

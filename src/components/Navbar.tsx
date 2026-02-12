@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import dripsLogo from "@/assets/drips-logo.jpg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,12 +24,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-orange rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform">
-              <span className="text-2xl">🍰</span>
-            </div>
-            <span className="text-2xl md:text-3xl font-display font-black text-brown group-hover:text-orange transition-colors">
-              DRIPS.
-            </span>
+            <img src={dripsLogo} alt="Drips Bakery & Cafe" className="h-14 w-auto object-contain group-hover:scale-105 transition-transform" />
           </Link>
 
           {/* Desktop Navigation */}
