@@ -2,7 +2,7 @@ import ContactSection from "@/components/ContactSection";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen pt-28">
+    <div className="min-h-screen pt-20">
       <ContactSection />
     </div>
   );

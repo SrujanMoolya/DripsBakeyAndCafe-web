@@ -143,23 +143,20 @@ const MenuSection = () => {
                 </div>
 
                 <Tabs defaultValue="cakes" className="w-full">
-                    <TabsList className="grid w-full max-w-5xl mx-auto grid-cols-4 lg:grid-cols-12 mb-12">
-                        <TabsTrigger value="cakes">Cakes</TabsTrigger>
-                        <TabsTrigger value="barcakes">Bar Cakes</TabsTrigger>
-                        <TabsTrigger value="cupcakes">Cup Cakes</TabsTrigger>
-                        <TabsTrigger value="cheesecakes">Cheesecakes</TabsTrigger>
-                        <TabsTrigger value="icecream">Ice Cream</TabsTrigger>
-                        <TabsTrigger value="pastries">Pastries</TabsTrigger>
-                        <TabsTrigger value="snacks">Snacks</TabsTrigger>
-                        <TabsTrigger value="breads">Breads & Toasts</TabsTrigger>
-                        <TabsTrigger value="cookies">Cookies</TabsTrigger>
-                        <TabsTrigger value="chocolates">Chocolates</TabsTrigger>
-                        <TabsTrigger value="desserts">Desserts</TabsTrigger>
-                        <TabsTrigger value="beverages">Beverages</TabsTrigger>
+                    <TabsList className="flex flex-wrap h-auto gap-2 bg-transparent justify-center mb-12">
+                        {Object.keys(categories).map((category) => (
+                            <TabsTrigger
+                                key={category}
+                                value={category}
+                                className="px-4 py-2 bg-muted/50 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-full capitalize"
+                            >
+                                {category === 'icecream' ? 'Ice Cream' : category === 'barcakes' ? 'Bar Cakes' : category}
+                            </TabsTrigger>
+                        ))}
                     </TabsList>
 
                     {Object.entries(categories).map(([category, items]) => (
-                        <TabsContent key={category} value={category}>
+                        <TabsContent key={category} value={category} className="mt-8">
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                                 {items.map((item, index) => (
                                     <ProductCard key={index} {...item} />

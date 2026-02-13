@@ -2,7 +2,7 @@ import CustomCakesSection from "@/components/CustomCakesSection";
 
 const CustomCakes = () => {
   return (
-    <div className="min-h-screen pt-28">
+    <div className="min-h-screen pt-20">
       <CustomCakesSection />
     </div>
   );

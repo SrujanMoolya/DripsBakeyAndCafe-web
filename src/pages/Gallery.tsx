@@ -2,7 +2,7 @@ import GallerySection from "@/components/GallerySection";
 
 const Gallery = () => {
   return (
-    <div className="min-h-screen pt-28">
+    <div className="min-h-screen pt-20">
       <GallerySection />
     </div>
   );

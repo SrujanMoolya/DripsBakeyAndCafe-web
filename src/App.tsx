@@ -5,7 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 import WhatsAppButton from "./components/WhatsAppButton";
+import FloatingBottomNav from "./components/FloatingBottomNav";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import CustomCakes from "./pages/CustomCakes";
@@ -23,6 +25,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Navbar />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
@@ -34,6 +37,7 @@ const App = () => (
         </Routes>
         <Footer />
         <WhatsAppButton />
+        <FloatingBottomNav />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
