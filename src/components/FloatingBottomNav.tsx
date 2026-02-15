@@ -22,6 +22,9 @@ const FloatingBottomNav = () => {
         return <IconComponent className={`w-5 h-5 mb-1 transition-all duration-300 ${isActive(path) ? "stroke-[2.5px]" : "stroke-2"}`} />;
     };
 
+    // Hide on cart page to avoid overlap with checkout button
+    if (location.pathname === "/cart") return null;
+
     return (
         <motion.div
             initial={{ y: 100, opacity: 0 }}

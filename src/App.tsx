@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import WhatsAppButton from "./components/WhatsAppButton";
 import FloatingBottomNav from "./components/FloatingBottomNav";
+import FloatingCartButton from "./components/FloatingCartButton";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import CustomCakes from "./pages/CustomCakes";
@@ -41,6 +42,7 @@ const App = () => (
           </Routes>
           <Footer />
           <WhatsAppButton />
+          <FloatingCartButton />
           <FloatingBottomNav />
         </BrowserRouter>
       </CartProvider>

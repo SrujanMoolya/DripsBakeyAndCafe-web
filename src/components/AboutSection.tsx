@@ -5,7 +5,7 @@ import { ScaleIn } from "@/components/ui/ScaleIn";
 
 const AboutSection = () => {
   return (
-    <section className="py-24 bg-secondary/30" id="about">
+    <section className="py-24 bg-secondary/30 overflow-hidden" id="about">
       <div className="container mx-auto px-4">
         <Reveal width="100%">
           <div className="text-center mb-12">

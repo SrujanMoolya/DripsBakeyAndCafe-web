@@ -27,7 +27,7 @@ const ContactSection = () => {
     };
 
     return (
-        <section className="py-24 bg-background" id="contact">
+        <section className="py-24 bg-background overflow-hidden" id="contact">
             <div className="container mx-auto px-4">
                 <Reveal width="100%">
                     <div className="text-center mb-12">

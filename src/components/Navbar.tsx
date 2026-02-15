@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, ShoppingCart } from "lucide-react";
+import { ShoppingCart, Menu as MenuIcon, X, Phone, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import dripsLogo from "@/assets/drips-logo.jpg";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,9 +8,18 @@ import { useCart } from "@/context/CartContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   const { totalItems } = useCart();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -24,24 +33,32 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="fixed top-0 w-full bg-background/80 backdrop-blur-xl z-50 border-b border-border/50 p-4"
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+        }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-18">
+      {/* Delivery Banner */}
+      <div className="bg-primary text-primary-foreground py-2 px-4 text-center text-xs font-medium tracking-wide">
+        <div className="container mx-auto flex items-center justify-center gap-2">
+          <Clock className="w-3 h-3" />
+          <span>We deliver within 15km of Udupi, Manipal & Malpe</span>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center space-x-3 group">
             <motion.img
               initial={{ rotate: -180, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
               src={dripsLogo}
-              alt="Drips Bakery & Cafe"
-              className="h-10 md:h-14 w-auto object-contain group-hover:scale-105 transition-transform rounded-full"
+              alt="Drips Bakery & Cafe udupi , manipal , malpe"
+              className="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform rounded-full"
             />
-            <span className="font-display font-bold text-lg md:text-xl ">Drips Bakery & Cafe</span>
+            <span className="font-display font-bold text-lg md:text-xl">
+              Drips Bakery & Cafe <span className="hidden md:inline">Udupi,Manipal</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -90,7 +107,7 @@ const Navbar = () => {
             </motion.div>
           </div>
 
-          {/* Mobile Menu Button - showing cart as well? maybe just hamburger for now */}
+          {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-2">
             <Link to="/cart">
               <Button size="icon" variant="ghost" className="relative hover:bg-secondary rounded-full">
@@ -108,7 +125,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={24} /> : <MenuIcon size={24} />}
             </button>
           </div>
         </div>
@@ -121,15 +138,15 @@ const Navbar = () => {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg:hidden overflow-hidden border-t border-border/50"
+              className="lg:hidden overflow-hidden bg-background/95 backdrop-blur-md border-t border-border/50"
             >
-              <div className="py-4 flex flex-col space-y-1">
+              <div className="py-4 flex flex-col space-y-2 px-4">
                 {navLinks.map((link) => (
                   <Link
                     key={link.path}
                     to={link.path}
                     onClick={() => setIsOpen(false)}
-                    className={`px-4 py-3 rounded-lg text-sm font-medium transition-all ${isActive(link.path)
+                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-all ${isActive(link.path)
                       ? "bg-primary text-primary-foreground"
                       : "text-foreground/70 hover:text-foreground hover:bg-secondary"
                       }`}
@@ -138,7 +155,7 @@ const Navbar = () => {
                   </Link>
                 ))}
                 <Link to="/menu" onClick={() => setIsOpen(false)}>
-                  <Button size="sm" className="w-full rounded-full font-semibold mt-2">
+                  <Button className="w-full rounded-full font-semibold mt-4 py-6">
                     <Phone className="w-4 h-4 mr-2" />
                     Order Now
                   </Button>
@@ -148,7 +165,7 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 
