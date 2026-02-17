@@ -3,7 +3,7 @@ import pastries from "@/assets/pastries.jpg";
 
 export const PRODUCT_CATEGORIES = {
     cakes: [
-        { name: "Vanilla Cake", description: "Classic 500gm", price: "₹300", image: customCake, color: "cream" as const },
+        { name: "Vanilla Cake", description: "Classic 500gm", price: "₹300", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4fPXtTIh9c-xU0_S6c27WrFfSeGZIMZDJ7w&s", color: "cream" as const },
         { name: "Black Forest", description: "Classic 500gm", price: "₹375", image: customCake, color: "blush" as const },
         { name: "Red Velvet", description: "Premium 500gm", price: "₹400", image: customCake, color: "blush" as const },
         { name: "Butterscotch", description: "Plain 500gm", price: "₹325", image: customCake, color: "amber" as const },

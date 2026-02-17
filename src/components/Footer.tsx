@@ -24,13 +24,15 @@ const Footer = () => {
 
           <Reveal delay={0.2}>
             <div>
-              <h4 className="font-semibold text-cream mb-4 text-sm tracking-widest uppercase">Quick Links</h4>
+              <h4 className="font-semibold text-cream mb-4 text-sm tracking-widest uppercase">Our Specialities</h4>
               <ul className="space-y-2">
                 {[
-                  { to: "/menu", label: "Menu" },
-                  { to: "/custom-cakes", label: "Custom Cakes" },
-                  { to: "/gallery", label: "Gallery" },
-                  { to: "/about", label: "About Us" },
+                  { to: "/custom-cakes-manipal", label: "Custom Cakes" },
+                  { to: "/eggless-cakes-udupi", label: "Eggless Cakes" },
+                  { to: "/flower-delivery-manipal", label: "Flower Delivery" },
+                  { to: "/roses-and-cake-combo", label: "Gift Combos" },
+                  { to: "/designer-cakes-manipal", label: "Designer Cakes" },
+                  { to: "/blog", label: "Bakery Blog" },
                 ].map((link) => (
                   <li key={link.to}>
                     <Link to={link.to} className="text-cream/60 hover:text-amber text-sm transition-colors duration-300">
@@ -44,11 +46,30 @@ const Footer = () => {
 
           <Reveal delay={0.3}>
             <div>
+              <h4 className="font-semibold text-cream mb-4 text-sm tracking-widest uppercase">Our Locations</h4>
+              <ul className="space-y-2">
+                {[
+                  { to: "/manipal", label: "Manipal" },
+                  { to: "/udupi", label: "Udupi" },
+                  { to: "/malpe", label: "Malpe" },
+                ].map((link) => (
+                  <li key={link.to}>
+                    <Link to={link.to} className="text-cream/60 hover:text-amber text-sm transition-colors duration-300">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.4}>
+            <div>
               <h4 className="font-semibold text-cream mb-4 text-sm tracking-widest uppercase">Contact</h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3 text-cream/60 text-sm">
                   <Phone className="w-4 h-4 mt-0.5 text-amber" />
-                  <span>+91 99728 56775 / +91 73535 43966</span>
+                  <span>+91 99728 56775</span>
                 </li>
                 <li className="flex items-start gap-3 text-cream/60 text-sm">
                   <Mail className="w-4 h-4 mt-0.5 text-amber" />
@@ -62,7 +83,7 @@ const Footer = () => {
             </div>
           </Reveal>
 
-          <Reveal delay={0.4}>
+          <Reveal delay={0.5}>
             <div>
               <h4 className="font-semibold text-cream mb-6 text-sm tracking-widest uppercase">Follow Us</h4>
               <div className="flex gap-3">

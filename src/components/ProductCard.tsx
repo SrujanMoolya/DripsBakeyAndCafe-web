@@ -37,13 +37,16 @@ const ProductCard = ({ name, description, price, image, color = "warm", index = 
     <Reveal width="100%" delay={(index % 4) * 0.1}>
       <div className="group">
         <div className={`${colorClasses[color]} rounded-2xl p-5 border transition-all duration-500 hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1`}>
-          {/* <div className="aspect-square rounded-xl overflow-hidden mb-4 bg-background/50">
+          <div className="aspect-square rounded-xl overflow-hidden mb-4 bg-background/50">
             <img
               src={image}
-              alt={name}
+              alt={`${name} - Fresh Eggless Cake in Manipal`}
+              loading="lazy"
+              width={300}
+              height={300}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
-          </div> */}
+          </div>
 
           <div className="space-y-2">
             <h3 className="font-display text-lg text-foreground leading-tight">

@@ -54,7 +54,7 @@ const Navbar = () => {
               transition={{ duration: 0.5 }}
               src={dripsLogo}
               alt="Drips Bakery & Cafe udupi , manipal , malpe"
-              className="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform rounded-full"
+              className="h-10 md:h-20 w-auto object-contain group-hover:scale-105 transition-transform rounded-sm"
             />
             <span className="font-display font-bold text-lg md:text-xl">
               Drips Bakery & Cafe <span className="hidden md:inline">Udupi,Manipal</span>

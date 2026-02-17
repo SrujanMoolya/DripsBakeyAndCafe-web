@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 import ProductCard from "@/components/ProductCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -22,12 +22,29 @@ const CategoryGrid = ({ items, limit = 8, color, idPrefix }: CategoryGridProps) 
         <div className="flex flex-col items-center">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 w-full mb-8">
                 {displayedItems.map((item, index) => (
-                    <ProductCard
-                        key={`${idPrefix}-${index}`}
-                        {...item}
-                        index={index}
-                        color={color}
-                    />
+                    <React.Fragment key={`${idPrefix}-${index}`}>
+                        <script type="application/ld+json">
+                            {JSON.stringify({
+                                "@context": "https://schema.org/",
+                                "@type": "Product",
+                                "name": item.name,
+                                "image": "https://dripsbakeryandcafe.com" + item.image,
+                                "description": item.description,
+                                "offers": {
+                                    "@type": "Offer",
+                                    "url": "https://dripsbakeryandcafe.com/menu",
+                                    "priceCurrency": "INR",
+                                    "price": item.price.replace('₹', '').replace(',', ''),
+                                    "availability": "https://schema.org/InStock"
+                                }
+                            })}
+                        </script>
+                        <ProductCard
+                            {...item}
+                            index={index}
+                            color={color}
+                        />
+                    </React.Fragment>
                 ))}
             </div>
 

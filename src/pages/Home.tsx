@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Sparkles, ArrowRight } from "lucide-react";
-import outletPhoto from "@/assets/custom-cake.jpg";
 import MenuSection from "@/components/MenuSection";
 import CustomCakesSection from "@/components/CustomCakesSection";
 import GallerySection from "@/components/GallerySection";
@@ -9,10 +8,67 @@ import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import { Reveal } from "@/components/ui/Reveal";
 import { ScaleIn } from "@/components/ui/ScaleIn";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { useEffect, useState, useCallback } from "react";
+import SEO from "@/components/SEO";
+import { getLocalBusinessSchema, getFAQSchema } from "@/lib/seo-utils";
+
+// Import hero images
+import cake1 from "@/assets/cake1.jpeg";
+import cake2 from "@/assets/cake2.jpeg";
+import cake3 from "@/assets/cake3.jpeg";
+import customCake from "@/assets/custom-cake.jpg";
+import heroBakery from "@/assets/hero-bakery.jpg";
 
 const Home = () => {
+  // Hero carousel images
+  const heroImages = [
+    { src: cake1, alt: "Custom Birthday Cakes in Manipal - Drips Bakery" },
+    { src: cake2, alt: "Fresh Baked Eggless Pastries in Udupi" },
+    { src: cake3, alt: "Designer Cakes for Delivery in Malpe" },
+    { src: customCake, alt: "Special Occasion Custom Cakes Manipal" },
+    { src: heroBakery, alt: "Best Bakery and Cafe in Manipal" },
+  ];
+
+  // Embla carousel setup with autoplay
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      duration: 30,
+    },
+    [Autoplay({ delay: 3000, stopOnInteraction: false })]
+  );
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on("select", onSelect);
+    onSelect();
+  }, [emblaApi, onSelect]);
+
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Custom Cakes & Eggless Bakery in Manipal | Drips Bakery"
+        description="Order custom, eggless & birthday cakes in Manipal, Udupi & Malpe. Same-day delivery available. Best bakery for designer cakes and fresh flowers."
+        keywords="custom cakes Manipal, eggless cakes Manipal, cake delivery Udupi, flower delivery Manipal, birthday cakes near me, best bakery in Manipal"
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            getLocalBusinessSchema(),
+            getFAQSchema()
+          ]
+        }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/40 to-accent/10" />
@@ -25,19 +81,19 @@ const Home = () => {
               <Reveal>
                 <div className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-4 py-2 rounded-full text-sm font-medium">
                   <Sparkles className="w-4 h-4 text-primary" />
-                  100% Vegetarian
+                  100% Vegetarian & Eggless
                 </div>
               </Reveal>
               <Reveal delay={0.4}>
                 <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight">
-                  <span className="block text-foreground">Happiness</span>
-                  <span className="block text-gradient italic">Baked</span>
-                  <span className="block text-foreground">Fresh Everyday</span>
+                  <span className="block text-foreground">Custom Eggless</span>
+                  <span className="block text-gradient italic">Cakes in</span>
+                  <span className="block text-foreground">Manipal</span>
                 </h1>
               </Reveal>
               <Reveal delay={0.6}>
                 <p className="text-xl text-muted-foreground max-w-md">
-                  Love at First Bite!!! 🍰
+                  Best Bakery and Cafe for Designer Cakes & Flower Delivery in Manipal, Udupi & Malpe. 🍰
                 </p>
               </Reveal>
               <Reveal delay={0.8}>
@@ -62,12 +118,38 @@ const Home = () => {
                 <div className="absolute -top-4 -left-4 w-20 h-20 bg-accent/20 rounded-2xl -rotate-6" />
                 <div className="absolute -bottom-4 -right-4 w-28 h-28 bg-primary/15 rounded-full" />
                 <div className="relative z-10 rounded-3xl overflow-hidden shadow-[var(--shadow-elevated)]">
-                  <img
-                    src="https://scontent.fblr4-4.fna.fbcdn.net/v/t51.82787-15/610611431_18308861266264050_5803920813677337223_n.webp?stp=dst-jpg_s640x640_tt6&_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=M114OfucOXwQ7kNvwFh26Ll&_nc_oc=AdlO5nih1jPib-ny0GTJZuD_jLWgU1eqI73nKC5nmNPA3E2R_JqOOuDTlVaGwkCgVh6bPM4jQHyaH_-Sk3-BjzsX&_nc_zt=23&_nc_ht=scontent.fblr4-4.fna&_nc_gid=H5cnRsQIxmkcgjDCMqVAOw&oh=00_AfvAaXDdUK2Gcb1KHlhiF8hMX4fBRXp1FnuC70H44UJGFQ&oe=69954C3E"
-                    alt="Drips Bakery & Cafe Outlet"
-                    className="w-full h-[520px] object-cover hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-espresso/30 to-transparent" />
+                  {/* Embla Carousel */}
+                  <div className="overflow-hidden" ref={emblaRef}>
+                    <div className="flex transition-opacity duration-1000">
+                      {heroImages.map((image, index) => (
+                        <div key={index} className="flex-[0_0_100%] min-w-0">
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            loading={index === 0 ? "eager" : "lazy"}
+                            {...(index === 0 ? { fetchpriority: "high" } : {})}
+                            className="w-full h-[520px] object-cover transition-transform duration-700 hover:scale-105"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-espresso/30 to-transparent pointer-events-none" />
+
+                  {/* Carousel Navigation Dots */}
+                  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                    {scrollSnaps.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => emblaApi?.scrollTo(index)}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${index === selectedIndex
+                          ? "bg-white w-8"
+                          : "bg-white/50 hover:bg-white/75"
+                          }`}
+                        aria-label={`Go to slide ${index + 1}`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </ScaleIn>
             </div>
@@ -92,9 +174,58 @@ const Home = () => {
         </div>
       </section>
 
+      <section id="features" className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">Same Day Cake Delivery in Udupi</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-6 rounded-2xl bg-secondary/20">
+              <h3 className="text-xl font-bold mb-3">Popular Cake Flavors</h3>
+              <p className="text-muted-foreground">From Classic Vanilla to Red Velvet and Lotus Biscoff, we have it all.</p>
+            </div>
+            <div className="p-6 rounded-2xl bg-secondary/20">
+              <h3 className="text-xl font-bold mb-3">Designer Cake Options</h3>
+              <p className="text-muted-foreground">Custom fondant and photo cakes designed for your special birthdays.</p>
+            </div>
+            <div className="p-6 rounded-2xl bg-secondary/20">
+              <h3 className="text-xl font-bold mb-3">Veg & Eggless Varieties</h3>
+              <p className="text-muted-foreground">100% vegetarian bakery ensuring quality and taste in every bite.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="flowers" className="py-16 bg-secondary/10">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 text-center">Fresh Flower & Bouquet Delivery</h2>
+          <p className="text-center text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Complement your celebrations with our fresh rose collection and custom bouquets delivered in Manipal & Udupi.
+          </p>
+        </div>
+      </section>
+
       <MenuSection />
 
+      <section className="py-16">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8 italic">Order Online Now</h2>
+          <p className="mb-8 text-lg">Experience the best bakery in Manipal with doorstep delivery.</p>
+          <Link to="/menu">
+            <Button size="lg" className="rounded-full px-12">Browse Full Menu</Button>
+          </Link>
+        </div>
+      </section>
+
       <CustomCakesSection />
+
+      <section className="py-16 bg-accent/5">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8">Why Choose Our Bakery in Manipal</h2>
+          <p className="max-w-3xl mx-auto text-muted-foreground text-lg">
+            Drips Bakery & Cafe is the most trusted name for custom cakes and fresh flower delivery in Manipal.
+            We take pride in our 100% eggless recipes and same-day delivery service across Udupi, Manipal, and Malpe.
+          </p>
+        </div>
+      </section>
 
       <GallerySection />
 
