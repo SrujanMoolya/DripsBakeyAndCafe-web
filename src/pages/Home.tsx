@@ -13,6 +13,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { useEffect, useState, useCallback } from "react";
 import SEO from "@/components/SEO";
 import { getLocalBusinessSchema, getFAQSchema } from "@/lib/seo-utils";
+import TypewriterText from "@/components/TypewriterText";
 
 // Import hero images
 import cake1 from "@/assets/cake1.jpeg";
@@ -25,7 +26,7 @@ const Home = () => {
   // Hero carousel images
   const heroImages = [
     { src: cake1, alt: "Custom Birthday Cakes in Manipal - Drips Bakery" },
-    { src: cake2, alt: "Fresh Baked Eggless Pastries in Udupi" },
+    { src: cake2, alt: "Fresh Baked 100% Veg Pastries in Udupi" },
     { src: cake3, alt: "Designer Cakes for Delivery in Malpe" },
     { src: customCake, alt: "Special Occasion Custom Cakes Manipal" },
     { src: heroBakery, alt: "Best Bakery and Cafe in Manipal" },
@@ -58,9 +59,9 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Custom Cakes & Eggless Bakery in Manipal | Drips Bakery"
-        description="Order custom, eggless & birthday cakes in Manipal, Udupi & Malpe. Same-day delivery available. Best bakery for designer cakes and fresh flowers."
-        keywords="custom cakes Manipal, eggless cakes Manipal, cake delivery Udupi, flower delivery Manipal, birthday cakes near me, best bakery in Manipal"
+        title="Custom Cakes & 100% Veg Bakery in Manipal | Drips Bakery"
+        description="Order custom, 100% veg & birthday cakes in Manipal, Udupi & Malpe. Same-day delivery available. Best bakery for designer cakes and fresh flowers."
+        keywords="custom cakes Manipal, 100% veg cakes Manipal, cake delivery Udupi, flower delivery Manipal, birthday cakes near me, best bakery in Manipal"
         schema={{
           "@context": "https://schema.org",
           "@graph": [
@@ -70,7 +71,7 @@ const Home = () => {
         }}
       />
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center pt-28 pb-12 lg:pb-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/40 to-accent/10" />
         <div className="absolute top-32 right-20 w-64 h-64 bg-accent/15 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-48 h-48 bg-primary/10 rounded-full blur-3xl" />
@@ -81,14 +82,16 @@ const Home = () => {
               <Reveal>
                 <div className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-4 py-2 rounded-full text-sm font-medium">
                   <Sparkles className="w-4 h-4 text-primary" />
-                  100% Vegetarian & Eggless
+                  100% Vegetarian & Veg Cakes Only
                 </div>
               </Reveal>
               <Reveal delay={0.4}>
                 <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight">
-                  <span className="block text-foreground">Custom Eggless</span>
+                  <span className="block text-foreground">Custom 100% Veg</span>
                   <span className="block text-gradient italic">Cakes in</span>
-                  <span className="block text-foreground">Manipal</span>
+                  <span className="block text-foreground capitalize">
+                    <TypewriterText texts={["Manipal", "Udupi", "Malpe"]} />
+                  </span>
                 </h1>
               </Reveal>
               <Reveal delay={0.6}>
@@ -158,7 +161,7 @@ const Home = () => {
       </section>
 
       {/* Student Discount Banner */}
-      <section className="py-6 bg-gradient-to-r from-espresso via-chocolate to-espresso">
+      <section className="mt-12 lg:mt-0 py-8 md:py-12 bg-gradient-to-r from-espresso via-chocolate to-espresso">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
             <div className="w-16 h-16 bg-amber rounded-2xl flex items-center justify-center flex-shrink-0 rotate-3">
@@ -187,7 +190,7 @@ const Home = () => {
               <p className="text-muted-foreground">Custom fondant and photo cakes designed for your special birthdays.</p>
             </div>
             <div className="p-6 rounded-2xl bg-secondary/20">
-              <h3 className="text-xl font-bold mb-3">Veg & Eggless Varieties</h3>
+              <h3 className="text-xl font-bold mb-3">100% Veg Cake Varieties</h3>
               <p className="text-muted-foreground">100% vegetarian bakery ensuring quality and taste in every bite.</p>
             </div>
           </div>
@@ -222,7 +225,7 @@ const Home = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-8">Why Choose Our Bakery in Manipal</h2>
           <p className="max-w-3xl mx-auto text-muted-foreground text-lg">
             Drips Bakery & Cafe is the most trusted name for custom cakes and fresh flower delivery in Manipal.
-            We take pride in our 100% eggless recipes and same-day delivery service across Udupi, Manipal, and Malpe.
+            We take pride in our 100% veg recipes and same-day delivery service across Udupi, Manipal, and Malpe.
           </p>
         </div>
       </section>

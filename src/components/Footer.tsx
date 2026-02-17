@@ -28,7 +28,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {[
                   { to: "/custom-cakes-manipal", label: "Custom Cakes" },
-                  { to: "/eggless-cakes-udupi", label: "Eggless Cakes" },
+                  { to: "/veg-cakes-udupi", label: "100% Veg Cakes" },
                   { to: "/flower-delivery-manipal", label: "Flower Delivery" },
                   { to: "/roses-and-cake-combo", label: "Gift Combos" },
                   { to: "/designer-cakes-manipal", label: "Designer Cakes" },

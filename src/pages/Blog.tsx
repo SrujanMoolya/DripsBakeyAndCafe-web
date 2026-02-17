@@ -20,9 +20,9 @@ const BLOG_POSTS = [
         image: 'https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=800&q=80'
     },
     {
-        slug: 'eggless-vs-regular-cakes',
-        title: 'Eggless vs Regular Cakes: Which One is Better?',
-        excerpt: 'Thinking about going eggless? We break down the differences and why our eggless cakes are just as fluffy.',
+        slug: 'veg-vs-regular-cakes',
+        title: '100% Veg vs Regular Cakes: Which One is Better?',
+        excerpt: 'Thinking about going 100% veg? We break down the differences and why our veg cakes are just as fluffy.',
         date: 'March 5, 2024',
         image: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&q=80'
     }
@@ -33,7 +33,7 @@ const Blog = () => {
         <div className="min-h-screen pt-32 pb-20">
             <SEO
                 title="Blog - Latest Updates & Cake Guides | Drips Bakery"
-                description="Read our latest articles about cake flavors, custom cake ordering guides, and eggless bakery tips in Manipal and Udupi."
+                description="Read our latest articles about cake flavors, custom cake ordering guides, and 100% veg bakery tips in Manipal and Udupi."
             />
             <div className="container mx-auto px-4">
                 <Reveal>

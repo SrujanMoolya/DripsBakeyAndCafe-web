@@ -80,10 +80,10 @@ export const getFAQSchema = () => ({
     "mainEntity": [
         {
             "@type": "Question",
-            "name": "Do you offer eggless cakes?",
+            "name": "Do you offer 100% veg cakes?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we specialize in 100% veg and eggless cakes in Manipal and Udupi. All our cakes can be customized to be eggless."
+                "text": "Yes, we specialize in 100% veg cakes in Manipal and Udupi. All our cakes are 100% vegetarian."
             }
         },
         {

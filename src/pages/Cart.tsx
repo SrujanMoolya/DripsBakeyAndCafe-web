@@ -66,7 +66,7 @@ const Cart = () => {
                 </Reveal>
 
                 {/* Free Gift Progress (Mock UI) */}
-                <Reveal width="100%" delay={0.1}>
+                {/* <Reveal width="100%" delay={0.1}>
                     <div className="bg-card border border-border rounded-xl p-4 mb-6 shadow-sm flex items-center gap-4">
                         <div className="bg-purple-100 p-2 rounded-lg">
                             <Gift className="w-6 h-6 text-purple-600" />
@@ -80,7 +80,7 @@ const Cart = () => {
                         </div>
                         <Button size="sm" variant="outline" className="h-8">View</Button>
                     </div>
-                </Reveal>
+                </Reveal> */}
 
                 {/* Delivery Time (Mock UI) */}
                 <Reveal width="100%" delay={0.15}>
@@ -89,7 +89,7 @@ const Cart = () => {
                             <Clock className="w-5 h-5 text-green-700" />
                         </div>
                         <div>
-                            <p className="font-bold text-sm">Delivery in 30-45 minutes</p>
+                            <p className="font-bold text-sm">Delivery in 15-60 minutes</p>
                             <p className="text-xs text-muted-foreground">Shipment of {cart.length} items</p>
                         </div>
                     </div>

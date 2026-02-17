@@ -18,7 +18,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ location, keywords, mapEmbe
         <div className="min-h-screen pt-20">
             <SEO
                 title={`${primaryKeyword} | Best Bakery in ${location}`}
-                description={`Order the best ${keywords.join(', ')} in ${location}. Same-day delivery available. 100% Eggless & Custom Cakes.`}
+                description={`Order the best ${keywords.join(', ')} in ${location}. Same-day delivery available. 100% Veg & Custom Cakes.`}
                 schema={getLocalBusinessSchema()}
             />
 
@@ -60,8 +60,8 @@ const LocationPage: React.FC<LocationPageProps> = ({ location, keywords, mapEmbe
                             <div className="flex items-start gap-4">
                                 <Star className="text-primary mt-1" />
                                 <div>
-                                    <h3 className="font-semibold text-lg">100% Eggless Options</h3>
-                                    <p className="text-muted-foreground">Wide variety of veg cakes and eggless treats for all your celebrations.</p>
+                                    <h3 className="font-semibold text-lg">100% Veg Cake Options</h3>
+                                    <p className="text-muted-foreground">Wide variety of 100% veg cakes and treats for all your celebrations.</p>
                                 </div>
                             </div>
                         </div>

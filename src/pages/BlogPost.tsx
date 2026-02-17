@@ -12,7 +12,7 @@ const BLOG_CONTENT: Record<string, any> = {
       <h2>1. Red Velvet</h2>
       <p>Our Red Velvet cake is not just a cake; it's an experience. The subtle hint of cocoa and the rich cream cheese frosting make it a top choice for anniversaries.</p>
       <h2>2. Lotus Biscoff</h2>
-      <p>The new favorite! The caramelized biscuit flavor combined with our fluffy eggless sponge is taking Manipal by storm.</p>
+      <p>The new favorite! The caramelized biscuit flavor combined with our fluffy 100% veg sponge is taking Manipal by storm.</p>
       <h2>3. Chocolate Truffle</h2>
       <p>For the purists. We use 100% pure ganache for that intense chocolate flavor that melt-in-the-mouth.</p>
     `,

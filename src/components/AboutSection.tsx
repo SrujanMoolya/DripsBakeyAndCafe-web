@@ -30,21 +30,23 @@ const AboutSection = () => {
             <Reveal delay={0.4} direction="left">
               <div>
                 <h2 className="font-display text-4xl font-bold mb-6">Our Story</h2>
-                <p className="text-muted-foreground text-lg mb-4">
-                  Drips Bakery & Cafe started with a simple dream: to create a space where every
-                  visit feels like a warm hug and every bite brings a smile. Located in the heart
-                  of Udupi and Manipal, we've become a beloved destination for students, families,
-                  and dessert enthusiasts.
-                </p>
-                <p className="text-muted-foreground text-lg mb-4">
-                  What began as a small bakery has blossomed into a community favorite, serving
-                  happiness baked fresh every day. From customized designer cakes to handcrafted
-                  coffee, we pour love into every creation.
-                </p>
-                <p className="text-muted-foreground text-lg">
-                  Today, Drips is more than just a bakery – it's where memories are made,
-                  celebrations come alive, and everyday moments become special.
-                </p>
+                <div className="space-y-4 text-muted-foreground text-lg">
+                  <p className="font-medium text-foreground">
+                    🎂 We Bake 100% Veg Cakes Only 🎂
+                  </p>
+                  <p>
+                    Serving Up Sweet Treats Since 2018 🎂 Experts In Customised cakes 🎂
+                  </p>
+                  <p className="italic">
+                    Freshcream Cakes Frosted And Served in 5mins ......... started with udupi branch...
+                  </p>
+                  <p className="pt-2">
+                    Drips Bakery & Cafe started with a simple dream: to create a space where every
+                    visit feels like a warm hug and every bite brings a smile. Located in the heart
+                    of Udupi, Manipal and Malpe, we've become a beloved destination for students, families,
+                    and dessert enthusiasts.
+                  </p>
+                </div>
               </div>
             </Reveal>
           </div>

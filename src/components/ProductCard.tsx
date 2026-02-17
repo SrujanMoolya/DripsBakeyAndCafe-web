@@ -40,7 +40,7 @@ const ProductCard = ({ name, description, price, image, color = "warm", index = 
           <div className="aspect-square rounded-xl overflow-hidden mb-4 bg-background/50">
             <img
               src={image}
-              alt={`${name} - Fresh Eggless Cake in Manipal`}
+              alt={`${name} - Fresh 100% Veg Cake in Manipal`}
               loading="lazy"
               width={300}
               height={300}
