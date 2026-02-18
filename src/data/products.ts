@@ -24,7 +24,7 @@ export const PRODUCT_CATEGORIES = {
             description: "Classic 500gm",
             price: "₹375",
             // Black Forest cake with cherries – montatip lilitsanong
-            image: "https://images.unsplash.com/photo-1611293388250-580b08c4a145?w=400&q=80",
+            image: "https://b.zmtcdn.com/data/dish_photos/70a/605fe405bc4509d305b51aa93c8a870a.jpg?fit=around|130:130&crop=130:130;*,*",
             color: "blush" as const,
         },
         {
@@ -834,14 +834,14 @@ export const PRODUCT_CATEGORIES = {
     ],
 
     // ─── FLOWERS ──────────────────────────────────────────────────────────────
-    flowers: [
+     flowers: [
         {
             name: "8 Red Roses Bouquet",
             description: "Fresh Red Roses",
             price: "₹779",
-            // Red rose bouquet – Tatiana Reusche (verified)
-            image: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=400&q=80",
-            color: "blush" as const,
+            // From Winni.in product page (verified)
+            image: "https://assets.winni.in/product/primary/2023/1/82083.jpeg?dpr=1&w=400",
+            
         },
         {
             name: "Glittery Love Roses Bouquet",
@@ -967,8 +967,8 @@ export const PRODUCT_CATEGORIES = {
             name: "Vibrant Blue Orchids",
             description: "Exotic Blue Orchids",
             price: "₹1,249",
-            // Blue/purple orchid blooms – Anita Austvika (verified)
-            image: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&q=80",
+            // From Winni.in - Mesmerising Blue Orchids Vase (verified)
+            image: "https://assets.winni.in/product/primary/2022/6/61648.jpeg",
             color: "sage" as const,
         },
         {
@@ -1119,8 +1119,8 @@ export const PRODUCT_CATEGORIES = {
             name: "Mesmerising Blue Orchids Vase",
             description: "Blue Orchids in Vase",
             price: "₹1,749",
-            // Blue orchids in a decorative vase
-            image: "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?w=400&q=80",
+            // From Winni.in product page (verified)
+            image: "https://assets.winni.in/product/primary/2022/6/61648.jpeg",
             color: "sage" as const,
         },
         {
