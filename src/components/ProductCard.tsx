@@ -36,7 +36,7 @@ const ProductCard = ({ name, description, price, image, color = "warm", index = 
   return (
     <Reveal width="100%" delay={(index % 4) * 0.1}>
       <div className="group">
-        <div className={`${colorClasses[color]} rounded-2xl p-5 border transition-all duration-500 hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1`}>
+        <div className={`${colorClasses[color]} rounded-2xl p-3 md:p-5 border transition-all duration-500 hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1`}>
           <div className="aspect-square rounded-xl overflow-hidden mb-4 bg-background/50">
             <img
               src={image}
@@ -49,14 +49,14 @@ const ProductCard = ({ name, description, price, image, color = "warm", index = 
           </div>
 
           <div className="space-y-2">
-            <h3 className="font-display text-lg text-foreground leading-tight">
+            <h3 className="font-display text-base md:text-lg text-foreground leading-tight">
               {name}
             </h3>
             {description && (
               <p className="text-sm text-muted-foreground line-clamp-2">{description}</p>
             )}
             <div className="flex items-center justify-between pt-2">
-              <span className="text-lg font-bold text-primary">{price}</span>
+              <span className="text-base md:text-lg font-bold text-primary">{price}</span>
               <Button
                 size="icon"
                 className="rounded-full w-9 h-9 shadow-[var(--shadow-warm)] hover:scale-110 transition-transform"

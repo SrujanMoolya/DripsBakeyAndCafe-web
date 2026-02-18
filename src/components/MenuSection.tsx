@@ -20,7 +20,7 @@ const CategoryGrid = ({ items, limit = 8, color, idPrefix }: CategoryGridProps) 
 
     return (
         <div className="flex flex-col items-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 w-full mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-x-6 md:gap-y-10 w-full mb-8">
                 {displayedItems.map((item, index) => (
                     <React.Fragment key={`${idPrefix}-${index}`}>
                         <script type="application/ld+json">
