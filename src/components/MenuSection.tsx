@@ -70,7 +70,7 @@ const MenuSection = () => {
 
     // Define category groups
     const foodCategories = [
-        'cakes', 'barcakes', 'cupcakes', 'cheesecakes', 'icecream',
+        'cakes', 'barcakes', 'cupcakes', 'cheesecakes', 'icecreamCakes',
         'pastries', 'snacks', 'breads', 'cookies', 'chocolates',
         'desserts', 'beverages'
     ];
@@ -100,14 +100,14 @@ const MenuSection = () => {
                     </Reveal>
 
                     <Tabs defaultValue="cakes" className="w-full">
-                        <TabsList className="flex flex-wrap h-auto gap-2 bg-transparent justify-center mb-12">
+                        <TabsList className="flex flex-nowrap md:flex-wrap h-auto gap-2 bg-transparent justify-start md:justify-center mb-8 md:mb-12 overflow-x-auto pb-4 md:pb-0 scrollbar-none scroll-smooth -mx-4 px-4 md:mx-0 md:px-0">
                             {foodCategories.map((category) => (
                                 <TabsTrigger
                                     key={category}
                                     value={category}
-                                    className="px-6 py-2.5 bg-secondary/50 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-full capitalize text-base transition-all duration-300 hover:bg-secondary"
+                                    className="px-5 py-2 md:px-6 md:py-2.5 bg-secondary/50 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-full capitalize text-sm md:text-base transition-all duration-300 hover:bg-secondary whitespace-nowrap shrink-0"
                                 >
-                                    {category === 'icecream' ? 'Ice Cream' : category === 'barcakes' ? 'Bar Cakes' : category}
+                                    {category === 'icecreamCakes' ? 'Ice Cream Cake' : category === 'barcakes' ? 'Bar Cakes' : category=== "cheesecakes" ? "Cheese Cakes" : category==="cupcakes" ? "Cup Cakes" : category}
                                 </TabsTrigger>
                             ))}
                         </TabsList>
