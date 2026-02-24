@@ -18,7 +18,6 @@ import TypewriterText from "@/components/TypewriterText";
 // Import hero images
 import cake1 from "@/assets/cake1.jpeg";
 import cake2 from "@/assets/cake2.jpeg";
-import cake3 from "@/assets/cake3.jpeg";
 import customCake from "@/assets/custom-cake.jpg";
 import heroBakery from "@/assets/hero-bakery.jpg";
 
@@ -27,7 +26,6 @@ const Home = () => {
   const heroImages = [
     { src: cake1, alt: "Custom Birthday Cakes in Manipal - Drips Bakery" },
     { src: cake2, alt: "Fresh Baked 100% Veg Pastries in Udupi" },
-    { src: cake3, alt: "Designer Cakes for Delivery in Malpe" },
     { src: customCake, alt: "Special Occasion Custom Cakes Manipal" },
     { src: heroBakery, alt: "Best Bakery and Cafe in Manipal" },
   ];
