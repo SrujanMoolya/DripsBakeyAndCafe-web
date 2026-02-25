@@ -21,7 +21,8 @@ const ProductCard = ({ name, description, price, image, color = "warm", index = 
       name,
       price,
       image,
-      quantity: 1
+      quantity: 1,
+      description
     });
   };
 

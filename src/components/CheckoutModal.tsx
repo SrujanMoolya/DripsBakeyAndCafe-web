@@ -43,11 +43,11 @@ const CheckoutModal = ({ isOpen, onClose }: CheckoutModalProps) => {
 
         message += `\n*Order Details:*\n`;
         cart.forEach((item) => {
-            message += `- ${item.name} (x${item.quantity}) - ${item.price}\n`;
+            const quantityInfo = item.description ? ` (${item.description})` : '';
+            message += `* ${item.name}${quantityInfo} (x${item.quantity})\n`;
+           // message += `Price: ₹${item.price}\n`;
         });
-
-        message += `\n*Total Amount: ₹${totalPrice.toFixed(2)}*`;
-
+        message += `\n*What Will Be The Total Amount ?*`;
         // 2. Encode the message for URL
         const encodedMessage = encodeURIComponent(message);
 
