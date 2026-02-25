@@ -17,9 +17,9 @@ import TypewriterText from "@/components/TypewriterText";
 
 // Import hero images
 import cake1 from "@/assets/cake1.jpeg";
-import cake2 from "@/assets/cake2.jpeg";
+import cake2 from "@/assets/cakeChocolate.jpg";
 import customCake from "@/assets/custom-cake.jpg";
-import heroBakery from "@/assets/hero-bakery.jpg";
+import heroBakery from "@/assets/cakeChocolate2.jpg";
 
 const Home = () => {
   // Hero carousel images
@@ -28,6 +28,8 @@ const Home = () => {
     { src: cake2, alt: "Fresh Baked 100% Veg Pastries in Udupi" },
     { src: customCake, alt: "Special Occasion Custom Cakes Manipal" },
     { src: heroBakery, alt: "Best Bakery and Cafe in Manipal" },
+    { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYzDT4ppoVEg8FFtt0O7ZrQQheDPC5QSjSWw&s", alt: "Best Bakery and Cafe in Manipal" },
+    { src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX4sT_foXWG_8rLJ02GdIHWOldOQh2AfCOnw&s", alt: "custom Fondent cake" },
   ];
 
   // Embla carousel setup with autoplay
