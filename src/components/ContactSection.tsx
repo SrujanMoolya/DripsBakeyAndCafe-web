@@ -18,7 +18,18 @@ const ContactSection = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        toast.success("Message sent! We'll get back to you soon.");
+
+        const phoneNumber = "918151956775"; 
+
+        let messageText = `Hello Drips Bakery!%0A%0A`;
+        if (formData.name) messageText += `*Name:* ${formData.name}%0A`;
+        if (formData.email) messageText += `*Email:* ${formData.email}%0A`;
+        if (formData.phone) messageText += `*Phone:* ${formData.phone}%0A`;
+        if (formData.message) messageText += `*Message:* ${formData.message}`;
+
+        window.open(`https://wa.me/${phoneNumber}?text=${messageText}`, "_blank");
+
+        toast.success("Redirecting to WhatsApp...");
         setFormData({ name: "", email: "", phone: "", message: "" });
     };
 
@@ -148,30 +159,7 @@ const ContactSection = () => {
                                     />
                                 </div>
 
-                                <div>
-                                    <Label htmlFor="email">Email *</Label>
-                                    <Input
-                                        id="email"
-                                        name="email"
-                                        type="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        required
-                                        placeholder="your.email@example.com"
-                                    />
-                                </div>
 
-                                <div>
-                                    <Label htmlFor="phone">Phone</Label>
-                                    <Input
-                                        id="phone"
-                                        name="phone"
-                                        type="tel"
-                                        value={formData.phone}
-                                        onChange={handleChange}
-                                        placeholder="+91 1234567890"
-                                    />
-                                </div>
 
                                 <div>
                                     <Label htmlFor="message">Message *</Label>

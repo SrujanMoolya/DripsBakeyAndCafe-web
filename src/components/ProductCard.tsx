@@ -17,13 +17,32 @@ const ProductCard = ({ name, description, price, image, color = "warm", index = 
 
   const handleAddToCart = () => {
     addToCart({
-      id: name, // Using name as ID since we don't have unique IDs
+      id: name,
       name,
       price,
       image,
       quantity: 1,
       description
     });
+  };
+
+  const productPrice = parseFloat(price.replace(/[^\d.]/g, ''));
+
+  // Schema.org Product markup
+  const schemaData = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": name,
+    "image": image,
+    "description": description || `${name} - Freshly baked 100% vegetarian cake.`,
+    "offers": {
+      "@type": "Offer",
+      "url": window.location.href,
+      "priceCurrency": "INR",
+      "price": productPrice,
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    }
   };
 
   const colorClasses = {
@@ -36,6 +55,9 @@ const ProductCard = ({ name, description, price, image, color = "warm", index = 
 
   return (
     <Reveal width="100%" delay={(index % 4) * 0.1}>
+      <script type="application/ld+json">
+        {JSON.stringify(schemaData)}
+      </script>
       <div className="group">
         <div className={`${colorClasses[color]} rounded-2xl p-3 md:p-5 border transition-all duration-500 hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1`}>
           <div className="aspect-square rounded-xl overflow-hidden mb-4 bg-background/50">

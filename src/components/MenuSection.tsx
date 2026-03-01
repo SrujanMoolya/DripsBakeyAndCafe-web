@@ -193,7 +193,7 @@ const MenuSection = () => {
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
 
                             <h3 className="font-display text-3xl md:text-4xl mb-4 text-foreground relative z-10">
-                                Order for Delivery
+                                Other Online Delivery Platforms
                             </h3>
                             <p className="text-muted-foreground mb-8 text-lg relative z-10">
                                 Craving something sweet or need a quick gift? Order now through our delivery partners!
