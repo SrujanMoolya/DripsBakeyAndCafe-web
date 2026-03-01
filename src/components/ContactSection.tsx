@@ -79,6 +79,7 @@ const ContactSection = () => {
                                             <p className="text-muted-foreground">orders@dripsbakery.com</p>
                                         </div>
                                     </div>
+                                    
                                 </Reveal>
 
                                 <Reveal delay={0.5} direction="left">
