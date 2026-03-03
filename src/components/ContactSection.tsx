@@ -19,7 +19,7 @@ const ContactSection = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        const phoneNumber = "918151956775"; 
+        const phoneNumber = "918151956775";
 
         let messageText = `Hello Drips Bakery!%0A%0A`;
         if (formData.name) messageText += `*Name:* ${formData.name}%0A`;
@@ -62,8 +62,8 @@ const ContactSection = () => {
                                         <div>
                                             <h3 className="font-semibold mb-1">Phone</h3>
                                             <p className="text-muted-foreground">+91 99728 56775</p>
-                                            <p className="text-muted-foreground">+91 73535 43966</p>
-                                            <p className="text-sm text-muted-foreground">Mon-Sun: 11 AM - 11 PM</p>
+                                            <p className="text-muted-foreground">+91 81519 56775</p>
+                                            <p className="text-sm text-muted-foreground">Mon-Sun: 9 AM - 11 PM</p>
                                         </div>
                                     </div>
                                 </Reveal>
@@ -75,11 +75,11 @@ const ContactSection = () => {
                                         </div>
                                         <div>
                                             <h3 className="font-semibold mb-1">Email</h3>
-                                            <p className="text-muted-foreground">hello@dripsbakery.com</p>
-                                            <p className="text-muted-foreground">orders@dripsbakery.com</p>
+                                            <p className="text-muted-foreground">dripsbakeryandcafe@gmail.com</p>
+                                            
                                         </div>
                                     </div>
-                                    
+
                                 </Reveal>
 
                                 <Reveal delay={0.5} direction="left">
@@ -95,7 +95,7 @@ const ContactSection = () => {
                                                 Udupi
                                             </p>
                                             <p className="text-sm text-muted-foreground mt-1">
-                                                <span className="font-medium">Phone:</span> +91 73535 43966<br />
+                                                <span className="font-medium">Phone:</span> +91 81519 56775<br />
                                                 <span className="font-medium">Hours:</span> 11:00 AM - 11:00 PM
                                             </p>
                                         </div>
@@ -134,7 +134,7 @@ const ContactSection = () => {
                                                 Main Road Malpe, Pandubettu, Udupi
                                             </p>
                                             <p className="text-sm text-muted-foreground mt-1">
-                                                <span className="font-medium">Phone:</span> +91 73535 43966<br />
+                                                <span className="font-medium">Phone:</span> +91 81519 56775<br />
                                                 <span className="font-medium">Hours:</span> 11:00 AM - 11:00 PM
                                             </p>
                                         </div>
