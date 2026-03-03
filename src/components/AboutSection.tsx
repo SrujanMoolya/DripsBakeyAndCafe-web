@@ -35,7 +35,7 @@ const AboutSection = () => {
                     🎂 We Bake 100% Veg Cakes Only 🎂
                   </p>
                   <p>
-                    Serving Up Sweet Treats Since 2018 🎂 Experts In Customised cakes 🎂
+                    Serving Up Sweet Treats Since 2017🎂 Experts In Customised cakes 🎂
                   </p>
                   <p className="italic">
                     Freshcream Cakes Frosted And Served in 5mins ......... started with udupi branch...
